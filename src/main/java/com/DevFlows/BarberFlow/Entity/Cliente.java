@@ -1,4 +1,4 @@
-package com.DevFlows.BarberFlow.entity;
+package com.DevFlows.BarberFlow.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,4 +23,5 @@ public class Cliente {
     private String nome;
     private String telefone;
     private String cpf;
+    private String senha;
 }

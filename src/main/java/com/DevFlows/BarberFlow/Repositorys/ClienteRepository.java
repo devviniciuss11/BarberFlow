@@ -1,8 +1,7 @@
 package com.DevFlows.BarberFlow.Repositorys;
 
-import com.DevFlows.BarberFlow.entity.Cliente;
+import com.DevFlows.BarberFlow.Entity.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

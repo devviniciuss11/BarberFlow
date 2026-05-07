@@ -1,7 +1,7 @@
 package com.DevFlows.BarberFlow.Controlers;
 
 import com.DevFlows.BarberFlow.Repositorys.ClienteRepository;
-import com.DevFlows.BarberFlow.entity.Cliente;
+import com.DevFlows.BarberFlow.Entity.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
