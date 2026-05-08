@@ -1,27 +1,42 @@
 package com.DevFlows.BarberFlow.Controlers;
 
-import com.DevFlows.BarberFlow.Repositorys.ClienteRepository;
-import com.DevFlows.BarberFlow.Entity.Cliente;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.DevFlows.BarberFlow.Service.ClienteService;
+import com.DevFlows.BarberFlow.dto.ClienteRequestDTO;
+import com.DevFlows.BarberFlow.dto.ClienteResponseDTO;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/cliente")
+@RequestMapping("/Cliente")
+@RequiredArgsConstructor
+@CrossOrigin("*")
 public class ClienteControler {
+    private final ClienteService clienteService;
 
-    @Autowired
-    ClienteRepository clienteRepository;
-
-    @GetMapping
-    public ResponseEntity getAll(){
-        List<Cliente> listaDeClientes = clienteRepository.findAll();
-        return ResponseEntity.status(HttpStatus.OK).body(listaDeClientes);
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public ClienteResponseDTO cadastrarCliente(@RequestBody @Valid ClienteRequestDTO dto) {
+        return clienteService.cadastrar(dto);
     }
+    @GetMapping("/{id}")
+    public ClienteResponseDTO listarClienteId(@PathVariable(value = "id") Long id){
+        return clienteService.buscarPorId(id);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void removerClienteId(@PathVariable Long id){
+        clienteService.excluirClientePorId(id);
+    }
+    @GetMapping
+    public List<ClienteResponseDTO> listar(){
+        return clienteService.listar();
+    }
+
+
 
 }
