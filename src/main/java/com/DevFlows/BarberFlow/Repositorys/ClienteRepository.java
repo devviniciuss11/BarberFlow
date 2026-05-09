@@ -12,10 +12,13 @@ import java.util.List;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     @Query(value = """
-            SELECT * FROM clientes 
-            WHERE LOWER(nome) LIKE LOWER(CONCAT('%', :nome, '%'))
+            SELECT c.id, c.nome, c.telefone, c.senha
+            FROM cliente c
+            WHERE LOWER(c.nome) LIKE LOWER(CONCAT('%', :nome, '%'))
+               OR c.telefone LIKE CONCAT('%', :nome, '%')
+            ORDER BY c.nome
             """, nativeQuery = true)
-    List<Cliente> buscarClientesPorNome(String nome);
+    List<Cliente> buscarClientesPorNome(@Param("nome") String nome);
 
 
     boolean existsBytelefone(@NotBlank(message = "Telefone é obrigatório.") String telefone);
