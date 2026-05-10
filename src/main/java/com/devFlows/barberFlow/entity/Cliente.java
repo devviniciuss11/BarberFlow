@@ -1,4 +1,4 @@
-package com.DevFlows.BarberFlow.Entity;
+package com.devFlows.barberFlow.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,7 +21,5 @@ public class Cliente {
     private String telefone;
     @Column(nullable = false)
     private String senha;
-
-
 
 }

@@ -1,8 +1,8 @@
-package com.DevFlows.BarberFlow.Controlers;
+package com.devFlows.barberFlow.controlers;
 
-import com.DevFlows.BarberFlow.Service.ClienteService;
-import com.DevFlows.BarberFlow.dto.ClienteRequestDTO;
-import com.DevFlows.BarberFlow.dto.ClienteResponseDTO;
+import com.devFlows.barberFlow.service.ClienteService;
+import com.devFlows.barberFlow.dto.ClienteRequestDTO;
+import com.devFlows.barberFlow.dto.ClienteResponseDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
