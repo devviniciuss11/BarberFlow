@@ -1,10 +1,10 @@
 package com.DevFlows.BarberFlow.Controlers;
-
 import com.DevFlows.BarberFlow.Service.ClienteService;
 import com.DevFlows.BarberFlow.dto.ClienteRequestDTO;
 import com.DevFlows.BarberFlow.dto.ClienteResponseDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -38,7 +38,7 @@ public class ClienteControler {
     }
 
     @PutMapping("/{id}")
-    public ClienteResponseDTO atualizar(@PathVariable(value = "id") Long id, @RequestBody ClienteRequestDTO dto){
+    public ClienteResponseDTO atualizar(@PathVariable(value = "id") Long id, @RequestBody @Valid ClienteRequestDTO dto){
         return clienteService.atualizar(id,dto);
     }
 

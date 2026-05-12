@@ -16,7 +16,6 @@ import java.util.List;
 public class ClienteService {
     private final ClienteRepository clienteRepository;
     public ClienteResponseDTO cadastrar(ClienteRequestDTO dto){
-        validarCliente(dto);
         Cliente cliente = Cliente.builder().nome(dto.nome()).telefone(dto.telefone()).senha(dto.senha()).build();
         if(clienteRepository.existsBytelefone(dto.telefone())){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Telefone Já Cadastrado");
@@ -50,7 +49,6 @@ public class ClienteService {
 
 
     public ClienteResponseDTO atualizar(Long id, ClienteRequestDTO dto) {
-        validarCliente(dto);
         Cliente cliente = buscarEntidade(id);
         cliente.setNome(dto.nome());
         cliente.setTelefone(dto.telefone());
@@ -58,9 +56,4 @@ public class ClienteService {
         return toResponse(clienteRepository.save(cliente));
     }
 
-    private void validarCliente(ClienteRequestDTO dto) {
-        if(dto.nome()== null || dto.nome().isBlank()) throw new RuntimeException("Nome Do Cliente é Obrigatorio.");
-        if(dto.telefone() == null || dto.telefone().isBlank()) throw new RuntimeException("Telefone é obrigatorio");
-        if(dto.senha() == null || dto.senha().isBlank()) throw new RuntimeException("Senha é obrigatoria");
-    }
 }
