@@ -1,5 +1,4 @@
 package com.DevFlows.BarberFlow.dto;
-
 import jakarta.validation.constraints.NotBlank;
 
 public record ClienteRequestDTO(
