@@ -14,7 +14,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"nome\": \"Pessoal\",\r\n  \"telefone\": \"1556423\",\r\n  \"senha\": \"14200632\"\r\n}",
+          "raw": "{\r\n  \"nome\": \"OlaMundokk\",\r\n  \"telefone\": \"123434\",\r\n  \"senha\": \"4321\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -22,13 +22,13 @@
           }
         },
         "url": {
-          "raw": "localhost:8080/Cliente",
+          "raw": "localhost:8080/clientes",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
-            "Cliente"
+            "clientes"
           ]
         }
       },
@@ -40,14 +40,14 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "localhost:8080/Cliente/2",
+          "raw": "localhost:8080/clientes/5",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
-            "Cliente",
-            "2"
+            "clientes",
+            "5"
           ]
         }
       },
@@ -59,13 +59,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "localhost:8080/Cliente?busca=2006",
+          "raw": "localhost:8080/clientes?busca=2006",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
-            "Cliente"
+            "clientes"
           ],
           "query": [
             {
@@ -83,14 +83,14 @@
         "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "localhost:8080/Cliente/1",
+          "raw": "localhost:8080/clientes/2",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
-            "Cliente",
-            "1"
+            "clientes",
+            "2"
           ]
         }
       },
@@ -102,13 +102,13 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "localhost:8080/Cliente",
+          "raw": "localhost:8080/clientes",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
-            "Cliente"
+            "clientes"
           ]
         }
       },
@@ -121,7 +121,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"nome\": \"Pessoal\",\r\n  \"telefone\": \"2006\",\r\n  \"senha\": \"5564\"\r\n}",
+          "raw": "{\r\n  \"nome\": \"Onze\",\r\n  \"telefone\": \"1234567876\",\r\n  \"senha\": \"12345\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -129,14 +129,14 @@
           }
         },
         "url": {
-          "raw": "localhost:8080/Cliente/4",
+          "raw": "localhost:8080/clientes/6",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
-            "Cliente",
-            "4"
+            "clientes",
+            "6"
           ]
         }
       },
