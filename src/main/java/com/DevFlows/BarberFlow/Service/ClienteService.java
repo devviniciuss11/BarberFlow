@@ -18,7 +18,7 @@ public class ClienteService {
     public ClienteResponseDTO cadastrar(ClienteRequestDTO dto){
         Cliente cliente = Cliente.builder().nome(dto.nome()).telefone(dto.telefone()).senha(dto.senha()).build();
         if(clienteRepository.existsBytelefone(dto.telefone())){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Telefone Já Cadastrado");
+            throw new ResponseStatusException(HttpStatus.CONFLICT,"Telefone Já Cadastrado");
         }
         return toResponse(clienteRepository.save(cliente));
 
@@ -28,7 +28,7 @@ public class ClienteService {
     }
     public void excluirClientePorId(Long id){
         if(!clienteRepository.existsById(id)){
-            throw new RuntimeException("Cliente Não encontrado");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente Não Encontrado");
         }
         clienteRepository.deleteById(id);
     }

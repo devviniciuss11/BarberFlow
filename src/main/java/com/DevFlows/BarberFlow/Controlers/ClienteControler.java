@@ -24,7 +24,7 @@ public class ClienteControler {
         return clienteService.cadastrar(dto);
     }
     @GetMapping("/{id}")
-    public ClienteResponseDTO listarClienteId(@PathVariable(value = "id") Long id){
+    public ClienteResponseDTO listarClienteId(@PathVariable Long id){
         return clienteService.buscarPorId(id);
     }
     @DeleteMapping("/{id}")
@@ -38,10 +38,7 @@ public class ClienteControler {
     }
 
     @PutMapping("/{id}")
-    public ClienteResponseDTO atualizar(@PathVariable(value = "id") Long id, @RequestBody @Valid ClienteRequestDTO dto){
+    public ClienteResponseDTO atualizar(@PathVariable Long id, @RequestBody @Valid ClienteRequestDTO dto){
         return clienteService.atualizar(id,dto);
     }
-
-
-
 }
