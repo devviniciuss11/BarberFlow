@@ -33,8 +33,8 @@ public class ClienteControler {
         clienteService.excluirClientePorId(id);
     }
     @GetMapping
-    public List<ClienteResponseDTO> listar(@RequestParam(required = false) String busca){
-        return clienteService.listar(busca);
+    public List<ClienteResponseDTO> listarPorNomeOuTelefone(@RequestParam(required = false) String busca){
+        return clienteService.listarPorNomeOuTelefone(busca);
     }
 
     @PutMapping("/{id}")
