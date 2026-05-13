@@ -40,18 +40,34 @@ public class ClienteService {
     private ClienteResponseDTO toResponse(Cliente cliente) {
         return new ClienteResponseDTO(cliente.getId(), cliente.getNome(), cliente.getTelefone());
     }
-    public List<ClienteResponseDTO> listar(String busca){
-        List<Cliente> clientes = (busca == null || busca.isBlank())
-                ? clienteRepository.findAll()
-                : clienteRepository.buscarClientesPorNome(busca.trim());
+    public List<ClienteResponseDTO> listarPorNomeOuTelefone(String busca){
+        boolean temBusca = busca != null && !busca.isBlank();
+        String termoBusca = temBusca ? busca.trim() : null;
+
+        List<Cliente> clientes = temBusca
+                ? clienteRepository.buscarClientesPorNome(termoBusca)
+                : clienteRepository.findAll();
+
+        if (temBusca && clientes.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Nenhum cliente encontrado para nome ou telefone: " + termoBusca);
+        }
+
         return clientes.stream().map(this::toResponse).toList();
     }
 
 
     public ClienteResponseDTO atualizar(Long id, ClienteRequestDTO dto) {
         Cliente cliente = buscarEntidade(id);
+        String novoTelefone = dto.telefone() == null ? null : dto.telefone().trim();
+
+        if (novoTelefone != null
+                && !novoTelefone.isBlank()
+                && clienteRepository.existsByTelefoneAndIdNot(novoTelefone, id)) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Telefone ja cadastrado");
+        }
+
         cliente.setNome(dto.nome());
-        cliente.setTelefone(dto.telefone());
+        cliente.setTelefone(novoTelefone);
         cliente.setSenha(dto.senha());
         return toResponse(clienteRepository.save(cliente));
     }
