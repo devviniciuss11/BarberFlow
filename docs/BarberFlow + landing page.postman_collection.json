@@ -1,14 +1,14 @@
 {
   "info": {
-    "_postman_id": "08188269-31a0-4c1f-a2e4-d297862e7a71",
+    "_postman_id": "6c7d6396-c75d-42a5-bec8-bf5d9660ab32",
     "name": "BarberFlow + landing page",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "54507461",
-    "_collection_link": "https://go.postman.co/collection/54507461-08188269-31a0-4c1f-a2e4-d297862e7a71?source=collection_link"
+    "_exporter_id": "54206307",
+    "_collection_link": "https://go.postman.co/collection/54206307-6c7d6396-c75d-42a5-bec8-bf5d9660ab32?source=collection_link"
   },
   "item": [
     {
-      "name": "Teste de CadastroCliente",
+      "name": "Test de CadastroCliente",
       "request": {
         "method": "POST",
         "header": [],
@@ -35,19 +35,65 @@
       "response": []
     },
     {
-      "name": "Test de Buscar pelo id",
+      "name": "Test de CadastroBarbeiro",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Jack\",\r\n  \"especialidade\": \"Corte Pigmentado\",\r\n  \"telefone\": \"8555448\",\r\n  \"senha\": \"12345\",\r\n  \"cpf\": \"147.58855455\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/barbeiros",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "barbeiros"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Test de Buscar pelo ID Cliente",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "localhost:8080/clientes/9",
+          "raw": "localhost:8080/clientes/1",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
             "clientes",
-            "9"
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Test de Busca pelo ID Barbeiro",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/barbeiros/5",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "barbeiros",
+            "5"
           ]
         }
       },
@@ -59,7 +105,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "localhost:8080/clientes?busca=123",
+          "raw": "localhost:8080/clientes?busca=21345",
           "host": [
             "localhost"
           ],
@@ -70,7 +116,7 @@
           "query": [
             {
               "key": "busca",
-              "value": "123"
+              "value": "21345"
             }
           ]
         }
@@ -83,13 +129,32 @@
         "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "localhost:8080/clientes/5",
+          "raw": "localhost:8080/clientes/1",
           "host": [
             "localhost"
           ],
           "port": "8080",
           "path": [
             "clientes",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Test Deletar Barbeiro por ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/barbeiros/5",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "barbeiros",
             "5"
           ]
         }
@@ -109,6 +174,24 @@
           "port": "8080",
           "path": [
             "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Test Listar Todos Os Barbeiros Cadastrados",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/barbeiros",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "barbeiros"
           ]
         }
       },
@@ -137,6 +220,34 @@
           "path": [
             "clientes",
             "8"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Test Atualizar Dados do Barbeiro",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"Matheus\",\r\n  \"especialidade\": \"Corte Pigmentado\",\r\n  \"telefone\": \"8555448\",\r\n  \"senha\": \"12345\",\r\n  \"cpf\": \"147.55888.5\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/barbeiros/5",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "barbeiros",
+            "5"
           ]
         }
       },
