@@ -1,5 +1,6 @@
 package com.devFlows.barberFlow.service;
 
+import com.devFlows.barberFlow.dto.ClienteResponseDTO;
 import com.devFlows.barberFlow.entity.Cliente;
 import com.devFlows.barberFlow.repositorys.ClienteRepository;
 import com.devFlows.barberFlow.dto.ClienteRequestDTO;

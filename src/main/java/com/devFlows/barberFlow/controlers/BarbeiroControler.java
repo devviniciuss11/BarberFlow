@@ -22,7 +22,7 @@ public class BarbeiroControler {
     public ResponseEntity<BarbeiroResponseDTO> cadastrar(@RequestBody BarbeiroRequestDTO dto) {
         BarbeiroResponseDTO response = barbeiroService.cadastrar(dto);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(barbeiroService.cadastrar(dto));
+                .body(response);
     }
 
     @GetMapping("/{id}")

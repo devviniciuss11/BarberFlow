@@ -16,6 +16,8 @@ public interface BarbeiroRepository extends JpaRepository<Barbeiro, Long> {
 
     boolean existsByTelefone(String telefone);
 
+    boolean existsByCpf(String cpf);
+
     @Query("SELECT b FROM Barbeiro b WHERE LOWER(b.nome) LIKE LOWER(CONCAT('%', :nome, '%'))")
     List<Barbeiro> buscarPorNome(@Param("nome") String nome);
 }

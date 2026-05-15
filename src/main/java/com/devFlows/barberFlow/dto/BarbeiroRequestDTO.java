@@ -2,6 +2,7 @@ package com.devFlows.barberFlow.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import org.springframework.data.jpa.repository.query.JSqlParserQueryEnhancer;
 
 public record BarbeiroRequestDTO (
 
@@ -17,7 +18,14 @@ public record BarbeiroRequestDTO (
 
         @NotBlank(message = "O telefone é Obrigatório!")
         @Size(max = 20, message = "O telefone deve ter no Max: 15 Caracteres!")
-        String telefone
+        String telefone,
+
+        @NotBlank(message = "Senha Obrigatória!")
+        String senha,
+
+        @NotBlank(message = "CPF é Obrigatório!")
+        @Size(max = 14, message = "O CPF deve ter no Max: 14 Caracteres!")
+        String cpf
 
         ){}
 

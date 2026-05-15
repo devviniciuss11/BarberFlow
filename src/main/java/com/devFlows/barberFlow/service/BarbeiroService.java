@@ -22,13 +22,19 @@ public class BarbeiroService{
     public BarbeiroResponseDTO cadastrar(BarbeiroRequestDTO dto){
 
         if (barbeiroRepository.existsByTelefone(dto.telefone())){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Telefone Já Cadastrado.");
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Telefone Já Cadastrado.");
+        }
+
+        if(barbeiroRepository.existsByCpf(dto.cpf())){
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Cpf Já Cadastrado.");
         }
 
         Barbeiro barbeiro = Barbeiro.builder()
                 .nome(dto.nome())
                 .especialidade(dto.especialidade())
                 .telefone(dto.telefone())
+                .senha(dto.senha())
+                .cpf(dto.cpf())
                 .ativo(true)
                 .build();
 
@@ -68,7 +74,14 @@ public class BarbeiroService{
         barbeiroRepository.save(barbeiro);
     }
 
-    private BarbeiroResponseDTO toResponse(Barbeiro barbeiro){
-        return new BarbeiroResponseDTO(barbeiro.getId(), barbeiro.getNome(), barbeiro.getTelefone(), barbeiro.getEspecialidade(), barbeiro.getAtivo());
+    private BarbeiroResponseDTO toResponse(Barbeiro barbeiro) {
+        return new BarbeiroResponseDTO(
+                barbeiro.getId(),
+                barbeiro.getNome(),
+                barbeiro.getTelefone(),
+                barbeiro.getEspecialidade(),
+                barbeiro.getCpf(),
+                barbeiro.getAtivo()
+        );
     }
 }

@@ -24,6 +24,12 @@ public class Barbeiro{
     @Column(nullable = false, length = 100)
     private String nome;
 
+    @Column(nullable = false,length = 14, unique = true)
+    private String cpf;
+
+    @Column(nullable = false)
+    private String senha;
+
     @Builder.Default
     @Column(nullable = false)
     private Boolean ativo = true;
