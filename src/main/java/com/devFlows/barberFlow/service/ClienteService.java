@@ -17,7 +17,7 @@ import java.util.List;
 public class ClienteService {
     private final ClienteRepository clienteRepository;
     public ClienteResponseDTO cadastrar(ClienteRequestDTO dto){
-        Cliente cliente = Cliente.builder().nome(dto.nome()).telefone(dto.telefone()).senha(dto.senha()).build();
+        Cliente cliente = Cliente.builder().nome(dto.nome()).telefone(dto.telefone()).senha(dto.senha()).agendamentopoints(0).build();
         if(clienteRepository.existsBytelefone(dto.telefone())){
             throw new ResponseStatusException(HttpStatus.CONFLICT,"Telefone Já Cadastrado");
         }
@@ -39,7 +39,7 @@ public class ClienteService {
     }
 
     private ClienteResponseDTO toResponse(Cliente cliente) {
-        return new ClienteResponseDTO(cliente.getId(), cliente.getNome(), cliente.getTelefone());
+        return new ClienteResponseDTO(cliente.getId(), cliente.getNome(), cliente.getTelefone(), cliente.getAgendamentopoints());
     }
     public List<ClienteResponseDTO> listarPorNomeOuTelefone(String busca){
         boolean temBusca = busca != null && !busca.isBlank();

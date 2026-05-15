@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
     @Query(value = """
-            SELECT c.id, c.nome, c.telefone, c.senha
+            SELECT c.id, c.nome, c.telefone, c.senha, c.agendamentopoints
             FROM cliente c
             WHERE LOWER(c.nome) LIKE LOWER(CONCAT('%', :nome, '%'))
                OR c.telefone LIKE CONCAT('%', :nome, '%')

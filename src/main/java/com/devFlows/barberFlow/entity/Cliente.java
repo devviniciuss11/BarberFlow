@@ -25,7 +25,7 @@ public class Cliente {
     private String senha;
 
     @Column(nullable = false)
-    private Integer agendamentoPoints;
+    private Integer agendamentopoints;
 
 
 }
