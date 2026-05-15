@@ -24,6 +24,9 @@ public class Cliente {
     @Column(nullable = false)
     private String senha;
 
+    @Column(nullable = false)
+    private Integer agendamentoPoints;
+
 
 
 }
