@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "cliente")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -15,11 +14,15 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private long id;
+
     @Column(nullable = false)
     private String nome;
+
     @Column(nullable = false, unique = true, length = 13)
     private String telefone;
+
     @Column(nullable = false)
     private String senha;
+
 
 }
