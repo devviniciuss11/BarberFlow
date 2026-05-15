@@ -1,18 +1,15 @@
-package com.devFlows.barberFlow.controlers;
-
-import com.devFlows.barberFlow.service.ClienteService;
-import com.devFlows.barberFlow.dto.ClienteRequestDTO;
-import com.devFlows.barberFlow.dto.ClienteResponseDTO;
+package com.DevFlows.BarberFlow.Controlers;
+import com.DevFlows.BarberFlow.Service.ClienteService;
+import com.DevFlows.BarberFlow.dto.ClienteRequestDTO;
+import com.DevFlows.BarberFlow.dto.ClienteResponseDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
-@RequestMapping("/Cliente")
+@RequestMapping("/clientes")
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class ClienteControler {
@@ -24,7 +21,7 @@ public class ClienteControler {
         return clienteService.cadastrar(dto);
     }
     @GetMapping("/{id}")
-    public ClienteResponseDTO listarClienteId(@PathVariable(value = "id") Long id){
+    public ClienteResponseDTO listarClienteId(@PathVariable Long id){
         return clienteService.buscarPorId(id);
     }
     @DeleteMapping("/{id}")
@@ -33,15 +30,12 @@ public class ClienteControler {
         clienteService.excluirClientePorId(id);
     }
     @GetMapping
-    public List<ClienteResponseDTO> listar(@RequestParam(required = false) String busca){
-        return clienteService.listar(busca);
+    public List<ClienteResponseDTO> listarPorNomeOuTelefone(@RequestParam(required = false) String busca){
+        return clienteService.listarPorNomeOuTelefone(busca);
     }
 
     @PutMapping("/{id}")
-    public ClienteResponseDTO atualizar(@PathVariable(value = "id") Long id, @RequestBody ClienteRequestDTO dto){
+    public ClienteResponseDTO atualizar(@PathVariable Long id, @RequestBody @Valid ClienteRequestDTO dto){
         return clienteService.atualizar(id,dto);
     }
-
-
-
 }

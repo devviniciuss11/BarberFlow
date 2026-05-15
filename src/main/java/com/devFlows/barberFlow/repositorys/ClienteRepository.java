@@ -22,4 +22,5 @@ public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
 
     boolean existsBytelefone(@NotBlank(message = "Telefone é obrigatório.") String telefone);
+    boolean existsByTelefoneAndIdNot(String telefone, Long id);
 }

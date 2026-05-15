@@ -16,10 +16,9 @@ import java.util.List;
 public class ClienteService {
     private final ClienteRepository clienteRepository;
     public ClienteResponseDTO cadastrar(ClienteRequestDTO dto){
-        validarCliente(dto);
         Cliente cliente = Cliente.builder().nome(dto.nome()).telefone(dto.telefone()).senha(dto.senha()).build();
         if(clienteRepository.existsBytelefone(dto.telefone())){
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Telefone Já Cadastrado");
+            throw new ResponseStatusException(HttpStatus.CONFLICT,"Telefone Já Cadastrado");
         }
         return toResponse(clienteRepository.save(cliente));
 
@@ -29,7 +28,7 @@ public class ClienteService {
     }
     public void excluirClientePorId(Long id){
         if(!clienteRepository.existsById(id)){
-            throw new RuntimeException("Cliente Não encontrado");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente Não Encontrado");
         }
         clienteRepository.deleteById(id);
     }
@@ -41,26 +40,36 @@ public class ClienteService {
     private ClienteResponseDTO toResponse(Cliente cliente) {
         return new ClienteResponseDTO(cliente.getId(), cliente.getNome(), cliente.getTelefone());
     }
-    public List<ClienteResponseDTO> listar(String busca){
-        List<Cliente> clientes = (busca == null || busca.isBlank())
-                ? clienteRepository.findAll()
-                : clienteRepository.buscarClientesPorNome(busca.trim());
+    public List<ClienteResponseDTO> listarPorNomeOuTelefone(String busca){
+        boolean temBusca = busca != null && !busca.isBlank();
+        String termoBusca = temBusca ? busca.trim() : null;
+
+        List<Cliente> clientes = temBusca
+                ? clienteRepository.buscarClientesPorNome(termoBusca)
+                : clienteRepository.findAll();
+
+        if (temBusca && clientes.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Nenhum cliente encontrado para nome ou telefone: " + termoBusca);
+        }
+
         return clientes.stream().map(this::toResponse).toList();
     }
 
 
     public ClienteResponseDTO atualizar(Long id, ClienteRequestDTO dto) {
-        validarCliente(dto);
         Cliente cliente = buscarEntidade(id);
+        String novoTelefone = dto.telefone() == null ? null : dto.telefone().trim();
+
+        if (novoTelefone != null
+                && !novoTelefone.isBlank()
+                && clienteRepository.existsByTelefoneAndIdNot(novoTelefone, id)) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Telefone ja cadastrado");
+        }
+
         cliente.setNome(dto.nome());
-        cliente.setTelefone(dto.telefone());
+        cliente.setTelefone(novoTelefone);
         cliente.setSenha(dto.senha());
         return toResponse(clienteRepository.save(cliente));
     }
 
-    private void validarCliente(ClienteRequestDTO dto) {
-        if(dto.nome()== null || dto.nome().isBlank()) throw new RuntimeException("Nome Do Cliente é Obrigatorio.");
-        if(dto.telefone() == null || dto.telefone().isBlank()) throw new RuntimeException("Telefone é obrigatorio");
-        if(dto.senha() == null || dto.senha().isBlank()) throw new RuntimeException("Senha é obrigatoria");
-    }
 }
