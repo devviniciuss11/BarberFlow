@@ -1,4 +1,4 @@
-package com.DevFlows.BarberFlow.Entity;
+package com.devFlows.barberFlow.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -26,7 +26,6 @@ public class Cliente {
 
     @Column(nullable = false)
     private Integer agendamentoPoints;
-
 
 
 }
