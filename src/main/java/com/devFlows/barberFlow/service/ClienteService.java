@@ -1,5 +1,4 @@
 package com.DevFlows.BarberFlow.service;
-
 import com.DevFlows.BarberFlow.dto.ClienteResponseDTO;
 import com.DevFlows.BarberFlow.entity.Cliente;
 import com.DevFlows.BarberFlow.repositorys.ClienteRepository;
@@ -8,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-
 import java.util.List;
 
 @Service
