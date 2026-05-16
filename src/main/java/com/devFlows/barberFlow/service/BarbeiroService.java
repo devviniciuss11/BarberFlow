@@ -1,11 +1,10 @@
-package com.devFlows.barberFlow.service;
+package com.DevFlows.BarberFlow.Service;
 
-import com.devFlows.barberFlow.entity.Barbeiro;
-import com.devFlows.barberFlow.dto.BarbeiroRequestDTO;
-import com.devFlows.barberFlow.dto.BarbeiroResponseDTO;
-import com.devFlows.barberFlow.repositorys.BarbeiroRepository;
+import com.DevFlows.BarberFlow.Entity.Barbeiro;
+import com.DevFlows.BarberFlow.dto.BarbeiroRequestDTO;
+import com.DevFlows.BarberFlow.dto.BarbeiroResponseDTO;
+import com.DevFlows.BarberFlow.Repositorys.BarbeiroRepository;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
