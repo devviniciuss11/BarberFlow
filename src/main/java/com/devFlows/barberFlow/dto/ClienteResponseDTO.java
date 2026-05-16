@@ -1,4 +1,4 @@
-package com.DevFlows.barberFlow.dto;
+package com.DevFlows.BarberFlow.dto;
 
 public record ClienteResponseDTO(Long id, String nome, String telefone, Integer agendamentoPoints) {
 }

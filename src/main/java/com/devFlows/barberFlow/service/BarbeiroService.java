@@ -1,9 +1,9 @@
-package com.DevFlows.barberFlow.Service;
+package com.DevFlows.BarberFlow.service;
 
-import com.DevFlows.barberFlow.Entity.Barbeiro;
-import com.DevFlows.barberFlow.dto.BarbeiroRequestDTO;
-import com.DevFlows.barberFlow.dto.BarbeiroResponseDTO;
-import com.DevFlows.barberFlow.Repositorys.BarbeiroRepository;
+import com.DevFlows.BarberFlow.Entity.Barbeiro;
+import com.DevFlows.BarberFlow.dto.BarbeiroRequestDTO;
+import com.DevFlows.BarberFlow.dto.BarbeiroResponseDTO;
+import com.DevFlows.BarberFlow.repositorys.BarbeiroRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
