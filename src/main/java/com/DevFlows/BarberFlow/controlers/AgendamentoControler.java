@@ -1,9 +1,9 @@
-package com.DevFlows.BarberFlow.controlers;
+package com.devFlows.barberFlow.controlers;
 
-import com.DevFlows.BarberFlow.Entity.Agendamento.StatusAgendamento;
-import com.DevFlows.BarberFlow.Service.AgendamentoService;
-import com.DevFlows.BarberFlow.dto.AgendamentoRequestDTO;
-import com.DevFlows.BarberFlow.dto.AgendamentoResponseDTO;
+import com.devFlows.barberFlow.entity.Agendamento.StatusAgendamento;
+import com.devFlows.barberFlow.service.AgendamentoService;
+import com.devFlows.barberFlow.dto.AgendamentoRequestDTO;
+import com.devFlows.barberFlow.dto.AgendamentoResponseDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;

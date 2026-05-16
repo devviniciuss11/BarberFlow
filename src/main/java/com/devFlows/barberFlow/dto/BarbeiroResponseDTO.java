@@ -1,4 +1,4 @@
-package com.DevFlows.BarberFlow.dto;
+package com.devFlows.barberFlow.dto;
 
 public record BarbeiroResponseDTO(
 

@@ -1,4 +1,4 @@
-package com.DevFlows.BarberFlow.dto;
+package com.devFlows.barberFlow.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

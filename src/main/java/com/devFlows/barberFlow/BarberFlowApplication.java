@@ -1,4 +1,4 @@
-package com.DevFlows.BarberFlow;
+package com.devFlows.barberFlow;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

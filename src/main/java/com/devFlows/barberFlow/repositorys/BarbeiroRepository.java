@@ -1,6 +1,6 @@
-package com.DevFlows.BarberFlow.Repositorys;
+package com.devFlows.barberFlow.repositorys;
 
-import com.DevFlows.BarberFlow.Entity.Barbeiro;
+import com.devFlows.barberFlow.entity.Barbeiro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.query.Param;

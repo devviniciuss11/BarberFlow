@@ -1,12 +1,12 @@
-package com.DevFlows.BarberFlow.Service;
+package com.devFlows.barberFlow.service;
 
-import com.DevFlows.BarberFlow.Entity.Agendamento;
-import com.DevFlows.BarberFlow.Entity.Agendamento.StatusAgendamento;
-import com.DevFlows.BarberFlow.Entity.Cliente;
-import com.DevFlows.BarberFlow.Repositorys.AgendamentoRepository;
-import com.DevFlows.BarberFlow.Repositorys.ClienteRepository;
-import com.DevFlows.BarberFlow.dto.AgendamentoRequestDTO;
-import com.DevFlows.BarberFlow.dto.AgendamentoResponseDTO;
+import com.devFlows.barberFlow.entity.Agendamento;
+import com.devFlows.barberFlow.entity.Agendamento.StatusAgendamento;
+import com.devFlows.barberFlow.entity.Cliente;
+import com.devFlows.barberFlow.repositorys.AgendamentoRepository;
+import com.devFlows.barberFlow.repositorys.ClienteRepository;
+import com.devFlows.barberFlow.dto.AgendamentoRequestDTO;
+import com.devFlows.barberFlow.dto.AgendamentoResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
