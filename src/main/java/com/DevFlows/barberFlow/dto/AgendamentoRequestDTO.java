@@ -1,4 +1,4 @@
-package com.DevFlows.barberFlow.dto;
+package com.DevFlows.BarberFlow.dto;
 
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;

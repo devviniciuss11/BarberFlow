@@ -1,8 +1,8 @@
-package com.DevFlows.barberFlow.Entity;
+package com.DevFlows.BarberFlow.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
+import com.DevFlows.BarberFlow.Entity.Cliente;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
