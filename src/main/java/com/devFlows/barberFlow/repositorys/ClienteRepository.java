@@ -1,6 +1,6 @@
-package com.devFlows.barberFlow.repositorys;
+package com.DevFlows.barberFlow.Repositorys;
 
-import com.devFlows.barberFlow.entity.Cliente;
+import com.DevFlows.barberFlow.Entity.Cliente;
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

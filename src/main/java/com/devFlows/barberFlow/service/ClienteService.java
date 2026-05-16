@@ -1,9 +1,9 @@
-package com.devFlows.barberFlow.service;
+package com.DevFlows.barberFlow.Service;
 
-import com.devFlows.barberFlow.dto.ClienteResponseDTO;
-import com.devFlows.barberFlow.entity.Cliente;
-import com.devFlows.barberFlow.repositorys.ClienteRepository;
-import com.devFlows.barberFlow.dto.ClienteRequestDTO;
+import com.DevFlows.barberFlow.dto.ClienteResponseDTO;
+import com.DevFlows.barberFlow.Entity.Cliente;
+import com.DevFlows.barberFlow.Repositorys.ClienteRepository;
+import com.DevFlows.barberFlow.dto.ClienteRequestDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

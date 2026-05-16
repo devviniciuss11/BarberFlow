@@ -1,7 +1,7 @@
-package com.devFlows.barberFlow.controlers;
-import com.devFlows.barberFlow.service.ClienteService;
-import com.devFlows.barberFlow.dto.ClienteRequestDTO;
-import com.devFlows.barberFlow.dto.ClienteResponseDTO;
+package com.DevFlows.barberFlow.controlers;
+import com.DevFlows.barberFlow.Service.ClienteService;
+import com.DevFlows.barberFlow.dto.ClienteRequestDTO;
+import com.DevFlows.barberFlow.dto.ClienteResponseDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

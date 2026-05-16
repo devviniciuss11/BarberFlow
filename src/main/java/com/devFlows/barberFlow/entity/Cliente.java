@@ -1,4 +1,4 @@
-package com.devFlows.barberFlow.entity;
+package com.DevFlows.barberFlow.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;

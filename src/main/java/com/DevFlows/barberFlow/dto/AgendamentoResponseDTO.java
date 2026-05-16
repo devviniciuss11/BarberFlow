@@ -1,6 +1,6 @@
-package com.devFlows.barberFlow.dto;
+package com.DevFlows.barberFlow.dto;
 
-import com.devFlows.barberFlow.entity.Agendamento.StatusAgendamento;
+import com.DevFlows.barberFlow.Entity.Agendamento.StatusAgendamento;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

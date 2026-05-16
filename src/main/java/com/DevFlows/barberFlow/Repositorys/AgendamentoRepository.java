@@ -1,7 +1,7 @@
-package com.devFlows.barberFlow.repositorys;
+package com.DevFlows.barberFlow.Repositorys;
 
-import com.devFlows.barberFlow.entity.Agendamento;
-import com.devFlows.barberFlow.entity.Agendamento.StatusAgendamento;
+import com.DevFlows.barberFlow.Entity.Agendamento;
+import com.DevFlows.barberFlow.Entity.Agendamento.StatusAgendamento;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
