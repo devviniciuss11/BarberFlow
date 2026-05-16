@@ -1,6 +1,6 @@
 package com.DevFlows.BarberFlow.repositorys;
 
-import com.DevFlows.BarberFlow.Entity.HorarioDisponivel;
+import com.DevFlows.BarberFlow.entity.HorarioDisponivel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

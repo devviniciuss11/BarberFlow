@@ -1,8 +1,7 @@
 package com.DevFlows.BarberFlow.service;
-
-import com.DevFlows.BarberFlow.Entity.Agendamento;
-import com.DevFlows.BarberFlow.Entity.Agendamento.StatusAgendamento;
-import com.DevFlows.BarberFlow.Entity.Cliente;
+import com.DevFlows.BarberFlow.entity.Agendamento;
+import com.DevFlows.BarberFlow.entity.Agendamento.StatusAgendamento;
+import com.DevFlows.BarberFlow.entity.Cliente;
 import com.DevFlows.BarberFlow.repositorys.AgendamentoRepository;
 import com.DevFlows.BarberFlow.repositorys.ClienteRepository;
 import com.DevFlows.BarberFlow.dto.AgendamentoRequestDTO;

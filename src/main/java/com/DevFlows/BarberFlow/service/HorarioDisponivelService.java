@@ -1,7 +1,7 @@
 package com.DevFlows.BarberFlow.service;
 
-import com.DevFlows.BarberFlow.Entity.Barbeiro;
-import com.DevFlows.BarberFlow.Entity.HorarioDisponivel;
+import com.DevFlows.BarberFlow.entity.Barbeiro;
+import com.DevFlows.BarberFlow.entity.HorarioDisponivel;
 import com.DevFlows.BarberFlow.repositorys.HorarioDisponivelRepository;
 import com.DevFlows.BarberFlow.dto.HorarioRequestDTO;
 import com.DevFlows.BarberFlow.dto.HorarioResponseDTO;

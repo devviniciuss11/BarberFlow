@@ -1,5 +1,4 @@
 package com.DevFlows.BarberFlow.controlers;
-
 import com.DevFlows.BarberFlow.dto.BarbeiroRequestDTO;
 import com.DevFlows.BarberFlow.dto.BarbeiroResponseDTO;
 import com.DevFlows.BarberFlow.service.BarbeiroService;

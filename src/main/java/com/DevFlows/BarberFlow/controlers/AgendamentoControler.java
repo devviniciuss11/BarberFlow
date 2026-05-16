@@ -1,6 +1,6 @@
 package com.DevFlows.BarberFlow.controlers;
 
-import com.DevFlows.BarberFlow.Entity.Agendamento.StatusAgendamento;
+import com.DevFlows.BarberFlow.entity.Agendamento.StatusAgendamento;
 import com.DevFlows.BarberFlow.service.AgendamentoService;
 import com.DevFlows.BarberFlow.dto.AgendamentoRequestDTO;
 import com.DevFlows.BarberFlow.dto.AgendamentoResponseDTO;

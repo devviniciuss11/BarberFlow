@@ -1,5 +1,4 @@
-package com.DevFlows.BarberFlow.Entity;
-
+package com.DevFlows.BarberFlow.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
@@ -29,7 +28,7 @@ public class HorarioDisponivel {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "barbeiro_id", nullable = false)
-    private com.DevFlows.BarberFlow.Entity.Barbeiro barbeiro;
+    private com.DevFlows.BarberFlow.entity.Barbeiro barbeiro;
 
 
 }

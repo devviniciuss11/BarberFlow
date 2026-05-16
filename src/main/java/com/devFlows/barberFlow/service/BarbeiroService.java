@@ -1,6 +1,6 @@
 package com.DevFlows.BarberFlow.service;
 
-import com.DevFlows.BarberFlow.Entity.Barbeiro;
+import com.DevFlows.BarberFlow.entity.Barbeiro;
 import com.DevFlows.BarberFlow.dto.BarbeiroRequestDTO;
 import com.DevFlows.BarberFlow.dto.BarbeiroResponseDTO;
 import com.DevFlows.BarberFlow.repositorys.BarbeiroRepository;

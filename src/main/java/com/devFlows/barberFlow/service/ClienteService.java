@@ -1,7 +1,7 @@
 package com.DevFlows.BarberFlow.service;
 
 import com.DevFlows.BarberFlow.dto.ClienteResponseDTO;
-import com.DevFlows.BarberFlow.Entity.Cliente;
+import com.DevFlows.BarberFlow.entity.Cliente;
 import com.DevFlows.BarberFlow.repositorys.ClienteRepository;
 import com.DevFlows.BarberFlow.dto.ClienteRequestDTO;
 import lombok.RequiredArgsConstructor;
